@@ -1,0 +1,147 @@
+<%- include('./templates/header2') %>
+<!-- Header Backgournd Shopping Cart -->
+<section>
+   <div class="background-shopping-cart overlay-bg">
+      <div class="body-boxcenter">
+         <div class="title-bg">
+            <h1>SHOPPING CART</h1>
+         </div>
+
+         <div class="mini-title-bg">
+            <ul>
+               <li>
+                  <a href="/">HOME</a>
+               </li>
+               <li>
+                  <a href="#">SHOPPING CART</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</section>
+</header>
+
+<div id="toast"></div>
+<input type="hidden" id="titleToast" value="<%= titleToast %>">
+<input type="hidden" id="messageToast" value="<%= messageToast %>">
+<input type="hidden" id="typeToast" value="<%= typeToast %>">
+<input type="hidden" id="durationToast" value="<%= durationToast %>">
+<!-- Body Shopping Cart -->
+<main>
+<!-- Section Product Cart Detail -->
+<section>
+   <div class="body-boxcenter">
+      <div class="cart-detail">
+         <div class="title-cart-detail">
+            <div class="container-title-cart-detail">
+               <p>PRODUCT</p>
+               <p>PRICE</p>
+               <p>QUANTITY</p>
+               <p>TOTAL</p>
+               <p>REMOVE</p>
+            </div>
+         </div>
+
+         <div class="body-product-cart-detail">
+            <!-- Product cart detail -->
+            <% let orderTotal = 0; let vat = 5; let i = 0; cart.products.forEach(pro => { %>
+                  <div class="product-cart-detail">
+                     <div class="container-product-cart-detail">
+                        <div class="content-pro">
+                           <a href="/detail/<%= pro._id %>">
+                              <img
+                                 src="/public/img/pro_img/<%= pro.image_pro %>"
+                                 alt=""
+                              />
+                           </a>
+      
+                           <div class="content-detail-pro">
+                              <a href="/detail/<%= pro._id %>">
+                                 <h3><%= pro.name_pro %></h3>
+                              </a>
+                              <p>Size: <%= pro.size_pro %></p>
+                           </div>
+                        </div>
+      
+                        <div class="price-pro">
+                           <p>$<%=  (pro.sale_pro < pro.price_pro) ? pro.sale_pro : pro.price_pro %></p>
+                        </div>
+      
+                        <div id="quantity-single-product" class="quantity-pro">
+                           <a href="/cart/<%= i %>/dec"><div class="dec-qtybutton"><i class="bi bi-dash"></i></div></a>
+                           <input type="text" id="amount" name="quantity_product" value="<%= pro.quantity_pro %>" />
+                           <a href="/cart/<%= i %>/inc"><div class="inc-qtybutton"><i class="bi bi-plus"></i></div></a>
+                        </div>
+      
+                        <div class="total-pro">
+                           <p>$<%= pro.quantity_pro * ((pro.sale_pro < pro.price_pro) ? pro.sale_pro : pro.price_pro) %></p>
+                        </div>
+      
+                        <div class="remove-pro">
+                           <a href="/cart/<%= i %>/delete">
+                              <div class="button-remove">
+                                 <i class="bi bi-x"></i>
+                              </div>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+            <% i++; orderTotal += pro.quantity_pro * ((pro.sale_pro < pro.price_pro) ? pro.sale_pro : pro.price_pro) }); %>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- Section Coupon Discount & Payment Details -->
+<section>
+   <div class="body-boxcenter">
+      <div class="container-coupon-payment">
+         <div class="coupon-discount">
+            <div class="title-coupon-detail">
+               <h1>COUPON DISCOUNT & PLACE ORDER</h1>
+            </div>
+
+            <div class="input-coupon">
+               <p>Enter your coupon code if you have one!</p>
+               <input type="text" name="" id="" placeholder="Enter your code here">
+            </div>
+
+            <div class="double-button-coupon-check">
+               <button>APPLY COUPON</button>
+               <a href="/cart/checkout"><button id="place-order">PLACE ORDER</button></a>
+            </div>
+         </div>
+
+         <div class="payment-details">
+            <div class="title-coupon-detail">
+               <h1>PAYMENT DETAILS</h1>
+            </div>
+
+            <div class="content-payment">
+               <div class="box-payment">
+                  <p>Cart Subtotal</p>
+                  <p id="cart-subtotal">$<%= orderTotal %></p>
+               </div>
+
+               <div class="box-payment">
+                  <p>Ship Subtotal</p>
+                  <p id="ship-subtotal">$0</p>
+               </div>
+
+               <div class="box-payment">
+                  <p>VAT</p>
+                  <p>$<%= vat %></p>
+               </div>
+
+               <div class="box-order-total">
+                  <p>Order Total</p>
+                  <p id="order-total">$<%= orderTotal + vat %></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+</main>
+<%- include('./templates/footer2') %>

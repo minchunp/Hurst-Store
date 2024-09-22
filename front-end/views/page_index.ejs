@@ -1,0 +1,507 @@
+<%- include('./templates/header1') %>
+<!-- Header Banner -->
+<div id="toast"></div>
+<section>
+   <div class="main-banner">
+      <div class="container-main-banner">
+         <div class="social-icon">
+            <a href="#"><i class="bi bi-google"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+         </div>
+
+         <div class="accent-product">
+            <div class="box-accent-product">
+               <div class="img-accent-product">
+                  <img
+                     src="/public/img/pro_img/product1.webp"
+                     alt=""
+                  />
+               </div>
+               <div class="container-box-accent1">
+                  <div class="boxcenter-accent1">
+                     <div class="tagNew_price">
+                        <span>New</span>
+                        <!-- <p>$40.2</p> -->
+                     </div>
+
+                     <div class="name_button">
+                        <div class="name">
+                           <a href="#">Nusskubus</a>
+                           <p>Furniture</p>
+                        </div>
+
+                        <button>Buy now</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="box-accent-product">
+               <div class="img-accent-product">
+                  <img
+                     src="/public/img/pro_img/product2.webp"
+                     alt=""
+                  />
+               </div>
+               <div class="container-box-accent2">
+                  <div class="boxcenter-accent2">
+                     <div class="content-accent2">
+                        <h3>New product 2024</h3>
+                        <p>
+                           Houseware refers to a broad category of
+                           items and products that are used in
+                           households for various purposes.
+                        </p>
+                     </div>
+
+                     <div class="name_button">
+                        <button>Buy now</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="banner">
+            <img
+               src="/public/img/other_img/banner1.webp"
+               alt=""
+            />
+
+            <div class="content-banner">
+               <div class="title-banner">
+                  <span>WELCOME TO OUR</span>
+                  <h1>FURNITURE</h1>
+                  <span>GALLERY 2024</span>
+               </div>
+
+               <p>
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration
+                  in some form, by injected humour, or randomised words
+                  which don't look even slightly believable
+               </p>
+
+               <button>Buy now</button>
+            </div>
+         </div>
+
+         <div class="user-func">
+            <a href="#"><i class="bi bi-search"></i></a>
+
+            <% if (user.id == -1) { %>
+                  <a href="/login"><i class="bi bi-person-fill"></i></a>
+            <% } else { %>
+                  <div class="main-user">
+                     <a href="#">
+                        <i class="bi bi-person-fill"></i>
+                     </a>
+
+                     <div class="modal-user-login">
+                        <div class="func-main-modal">
+                           <a data-tooltip="Information" href="#">
+                              <i class="bi bi-info"></i>
+                           </a>
+                           <% if (user.role_user == 'Admin') { %>
+                                 <a data-tooltip="Page admin" href="/admin">
+                                    <i class="bi bi-person-fill-gear"></i>
+                                 </a>
+                           <% } %>
+                           <a data-tooltip="Log out" href="/logout">
+                              <i class="bi bi-box-arrow-left"></i>
+                           </a>
+                        </div>
+
+                        <div class="main-modal">
+                           <div class="image-user">
+                              <img src="/public/img/other_img/<%= (user.role_user == 'Admin')?'admin.jpg':'imageUserLight.jpg' %>" alt="">
+                           </div>
+                           <div class="name-user">
+                              <a href="#">
+                                 <h3><%= user.name_user %></h3>
+                              </a>
+                              <p><%= user.role_user %></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+            <% } %>
+
+            <a href="#"><i class="bi bi-heart-fill"></i></a>
+         </div>
+      </div>
+   </div>
+</section>
+</header>
+
+<!-- Body Main Website -->
+<main>
+<!-- Section Featured Products -->
+<section>
+   <div class="section-featured-product">
+      <div class="body-boxcenter">
+         <div class="section-title">
+            <h2>Trending Products</h2>
+         </div>
+
+         <div class="main-featured-product">
+            <div class="button-prev">
+               <i class="bi bi-chevron-compact-left"></i>
+            </div>
+
+            <!-- Trending products -->
+            <div class="container-featured" id="trendingProduct">
+               <% listProductTrending.forEach(pro => { %>
+                  <div class="box-featured-product">
+                     <div class="product-image">
+                        <a href="/detail/<%= pro._id %>">
+                           <img
+                           data-id=""
+                           class="detail"
+                           src="/public/img/pro_img/<%= pro.image_pro %>"
+                           alt=""
+                        />
+                        </a>
+                        <% if (pro.sale_pro < pro.price_pro) { %>
+                              <div class="tag-product-sale">
+                                 <span>Sale</span>
+                              </div>
+                        <% } else { %>
+
+                        <% } %>
+                        
+      
+                        <div class="main">
+                           <div class="container-func-pro">
+                              <div class="function-product">
+                                 <div class="func-wishlist">
+                                    <i class="bi bi-heart"></i>
+                                 </div>
+                                 |
+                                 <div class="func-qich-view">
+                                    <i class="bi bi-search"></i>
+                                 </div>
+                                 |
+                                 <div class="func-add-cart">
+                                    <i class="bi bi-cart-plus"></i>
+                                 </div>
+                                 |
+                                 <div class="func-payment">
+                                    <i class="bi bi-currency-dollar"></i>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+      
+                     <div class="product-content">
+                        <div class="product-name">
+                           <a href="/detail/<%= pro.id %>"><h3><%= pro.name_pro %></h3></a>
+                           <p>Furniture</p>
+                        </div>
+      
+                        <div class="product-price">
+                           <% if (pro.sale_pro < pro.price_pro) { %>
+                                 <div class="sale-price">
+                                    <p>$<%= pro.sale_pro %></p>
+                                    <span>$<%= pro.price_pro %></span>
+                                 </div>
+                           <% } else { %>
+                                 <div class="sale-price">
+                                    <p>$<%= pro.price_pro %></p>
+                                 </div>
+                           <% } %>
+                           <div class="stars">
+                              <i class="bi bi-star-fill"></i>
+                              <i class="bi bi-star-fill"></i>
+                              <i class="bi bi-star-fill"></i>
+                              <i class="bi bi-star-fill"></i>
+                              <i class="bi bi-star-fill"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               <% }); %>
+            </div>
+
+            <div class="button-next">
+               <i class="bi bi-chevron-compact-right"></i>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- Section Discount -->
+<section>
+   <div class="section-discount">
+      <div class="body-boxcenter-discount">
+         <div class="background-discount">
+            <div class="position-discount">
+               <div class="onSale-circle">
+                  <p>On Sale</p>
+                  <span>$80.00</span>
+               </div>
+            </div>
+
+            <div class="content-discount">
+               <h1>Discount 50%</h1>
+               <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing
+                  elit, sed does eiusmodes tempor incididunt ut labore
+                  et dolore magna aliqua. Ut enim ad minim venim, quis
+                  nostrud exercitation ullamco laboris.
+               </p>
+
+               <button>BUY NOW</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- Section Our Products -->
+<section>
+   <div class="section-our-product">
+      <div class="body-boxcenter">
+         <div class="section-title">
+            <h2>Our Products</h2>
+
+            <div class="menu-our-product">
+               <ul>
+                  <li><a class="active" href="#">New Arrivals</a></li>
+                  <li><a href="#">Best Seller</a></li>
+                  <li><a href="#">Most View</a></li>
+                  <li><a href="#">Discount</a></li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="main-featured-product">
+            <div class="container-featured" id="ourProduct">
+               <% listProductOur.forEach(pro => { %>
+                  <div class="box-featured-product">
+                     <div class="product-image">
+                        <a href="/detail/<%= pro._id %>">
+                           <img
+                           data-id=""
+                           class="detail"
+                           src="/public/img/pro_img/<%= pro.image_pro %>"
+                           alt=""
+                        />
+                        </a>
+                        <% if (pro.sale_pro < pro.price_pro) { %>
+                              <div class="tag-product-sale">
+                                 <span>Sale</span>
+                              </div>
+                        <% } else { %>
+
+                        <% } %>
+                        
+      
+                        <div class="main">
+                           <div class="container-func-pro">
+                              <div class="function-product">
+                                 <div class="func-wishlist">
+                                    <i class="bi bi-heart"></i>
+                                 </div>
+                                 |
+                                 <div class="func-qich-view">
+                                    <i class="bi bi-search"></i>
+                                 </div>
+                                 |
+                                 <div class="func-add-cart">
+                                    <i
+                                       data-id="{item.id}"
+                                       class="bi bi-cart-plus btn-addCart"
+                                    ></i>
+                                 </div>
+                                 |
+                                 <div class="func-payment">
+                                    <i class="bi bi-currency-dollar"></i>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+      
+                     <div class="product-content">
+                        <div class="product-name">
+                           <a href="/detail/<%= pro._id %>"><h3><%= pro.name_pro %></h3></a>
+                           <p>Furniture</p>
+                        </div>
+      
+                        <div class="product-price">
+                           <% if (pro.sale_pro < pro.price_pro) { %>
+                                 <div class="sale-price">
+                                    <p>$<%= pro.sale_pro %></p>
+                                    <span>$<%= pro.price_pro %></span>
+                                 </div>
+                           <% } else { %>
+                                 <div class="sale-price">
+                                    <p>$<%= pro.price_pro %></p>
+                                 </div>
+                           <% } %>
+                           <div class="stars">
+                              <i class="bi bi-star-fill"></i>
+                              <i class="bi bi-star-fill"></i>
+                              <i class="bi bi-star-fill"></i>
+                              <i class="bi bi-star-fill"></i>
+                              <i class="bi bi-star-fill"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               <% }); %>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- Section From The Blog -->
+<section>
+   <div class="section-blog">
+      <div class="body-boxcenter">
+         <div class="section-title">
+            <h2>From The Blog</h2>
+         </div>
+
+         <div class="main-blog">
+            <div class="container-blog">
+               <div class="box-blog">
+                  <div class="content-blog">
+                     <div class="title-content-blog">
+                        <div class="day-up-blog">
+                           <p>30</p>
+                        </div>
+
+                        <div class="name-blog">
+                           <p>JUNE, 2023</p>
+                           <a href="#"
+                              ><h2>FARNITURE DRAWING 2023</h2></a
+                           >
+                        </div>
+                     </div>
+
+                     <div class="interact-blog">
+                        <a href="#">
+                           <div class="interact-icon">
+                              <i class="bi bi-heart-fill"></i>
+                              <p>52 Like</p>
+                           </div>
+                        </a>
+
+                        <a href="#">
+                           <div class="interact-icon">
+                              <i
+                                 class="bi bi-chat-right-text-fill"
+                              ></i>
+                              <p>30 Comments</p>
+                           </div>
+                        </a>
+
+                        <a href="#">
+                           <div class="interact-icon">
+                              <i class="bi bi-share-fill"></i>
+                              <p>13 Share</p>
+                           </div>
+                        </a>
+                     </div>
+
+                     <div class="paraphrase-blog">
+                        <p>
+                           There are many variations of passages of
+                           Lorem Ipsum available, but the majority have
+                           suffered If you are going to use a passage
+                           Lorem Ipsum, you alteration in some form.
+                        </p>
+                     </div>
+
+                     <div class="link-read-more">
+                        <a href="#">Read more...</a>
+                     </div>
+                  </div>
+
+                  <div class="image-blog">
+                     <a href="#">
+                        <img
+                           src="/public/img/other_img/blog1.webp"
+                           alt=""
+                        />
+                     </a>
+                  </div>
+               </div>
+
+               <div class="box-blog">
+                  <div class="content-blog">
+                     <div class="title-content-blog">
+                        <div class="day-up-blog">
+                           <p>30</p>
+                        </div>
+
+                        <div class="name-blog">
+                           <p>JUNE, 2023</p>
+                           <a href="#"
+                              ><h2>FARNITURE DRAWING 2023</h2></a
+                           >
+                        </div>
+                     </div>
+
+                     <div class="interact-blog">
+                        <a href="#">
+                           <div class="interact-icon">
+                              <i class="bi bi-heart-fill"></i>
+                              <p>52 Like</p>
+                           </div>
+                        </a>
+
+                        <a href="#">
+                           <div class="interact-icon">
+                              <i
+                                 class="bi bi-chat-right-text-fill"
+                              ></i>
+                              <p>30 Comments</p>
+                           </div>
+                        </a>
+
+                        <a href="#">
+                           <div class="interact-icon">
+                              <i class="bi bi-share-fill"></i>
+                              <p>13 Share</p>
+                           </div>
+                        </a>
+                     </div>
+
+                     <div class="paraphrase-blog">
+                        <p>
+                           There are many variations of passages of
+                           Lorem Ipsum available, but the majority have
+                           suffered If you are going to use a passage
+                           Lorem Ipsum, you alteration in some form.
+                        </p>
+                     </div>
+
+                     <div class="link-read-more">
+                        <a href="#">Read more...</a>
+                     </div>
+                  </div>
+
+                  <div class="image-blog">
+                     <a href="#">
+                        <img
+                           src="/public/img/other_img/blog2.webp"
+                           alt=""
+                        />
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+</main>
+<%- include('./templates/footer1') %>

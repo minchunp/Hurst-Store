@@ -1,0 +1,105 @@
+<%- include('./templates/header_admin') %>
+<!-- Section add products -->
+<section>
+   <div id="add-product-page" class="add-product">
+      <div class="boxcenter">
+         <div class="title-product">
+            <h1>Add Product</h1>
+            <a href="/admin/product">
+               <i class="bi bi-arrow-left-short"></i>
+            </a>
+         </div>
+
+         <div class="container-add-product">
+            <div class="box-demo-add">
+               <div class="box-featured-product">
+                  <div class="product-image">
+                     <div class="box-toggle-image">
+                        <i class="bi bi-image"></i>
+                     </div>
+   
+                     <div class="main-func">
+                        <div class="container-func-pro">
+                           <div class="function-product">
+                              <div class="func-wishlist">
+                                 <i class="bi bi-heart"></i>
+                              </div>
+                              |
+                              <div class="func-qich-view">
+                                 <i class="bi bi-search"></i>
+                              </div>
+                              |
+                              <div class="func-add-cart">
+                                 <i data-id="${item.id}" class="bi bi-cart-plus btn-addCart"></i>
+                              </div>
+                              |
+                              <div class="func-payment">
+                                 <i class="bi bi-currency-dollar"></i>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+   
+                  <div class="product-content">
+                     <div class="product-name">
+                        <a href="#"><h3>Name</h3></a>
+                        <p>Furniture</p>
+                     </div>
+   
+                     <div class="product-price">
+                        <p>$Price</p>
+                        <div class="stars">
+                           <i class="bi bi-star-fill"></i>
+                           <i class="bi bi-star-fill"></i>
+                           <i class="bi bi-star-fill"></i>
+                           <i class="bi bi-star-fill"></i>
+                           <i class="bi bi-star-fill"></i>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <form method="post">
+               <div class="box-input-add">
+                  <div class="element-input">
+                     <p>Product's name</p>
+                     <input name="name_product" type="text" id="name-product" placeholder="Name">
+                  </div>
+                  <div class="element-input">
+                     <p>Product's image</p>
+                     <input type="file" name="image_product">
+                     <!-- <div class="chooseFileAvatar">
+                        <input type="file" id="image-product" class="inputFile" accept="image/*">
+                        <label for="image-product"><i class="bi bi-upload"></i>Upload image</label>
+                        <span>
+                           <strong>File:</strong>
+                           <span id="fileName">None</span>
+                        </span>
+                     </div> -->
+                  </div>
+                  <div class="element-input">
+                     <p>Product's price</p>
+                     <input name="price_product" type="text" id="price-product" placeholder="Price">
+                  </div>
+                  <div class="element-input">
+                     <p>Product's promotion price</p>
+                     <input name="sale_product" type="text" id="sale-product" placeholder="Promotion price">
+                  </div>
+                  <div class="element-input">
+                     <p>Product's discription</p>
+                     <input name="discription_product" type="text" id="description-product" placeholder="Discription">
+                  </div>
+                  <div class="element-input">
+                     <p>Product's trengding</p>
+                     <input name="trending_pro" type="checkbox" id="trending-product">
+                  </div>
+                  <button id="add-product" type="submit">Add product</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</section>
+<%- include('./templates/footer_admin') %>

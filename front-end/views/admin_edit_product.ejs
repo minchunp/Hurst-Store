@@ -1,0 +1,116 @@
+<%- include('./templates/header_admin') %>
+<!-- Section edit products -->
+<section>
+   <div id="edit-product-page" class="edit-product">
+      <div class="boxcenter">
+         <div class="title-product">
+            <% let idProduct = ''; idProduct = (pro._id).slice(20) %>
+            <h1>Edit Product <span>#<%= idProduct %></span></h1>
+            <a href="/admin/product">
+               <i class="bi bi-arrow-left-short"></i>
+            </a>
+         </div>
+
+         <div class="container-add-product">
+            <div class="box-demo-add">
+               <div class="box-featured-product">
+                  <div class="product-image">
+                     <img
+                        id="showImage"
+                        class="detail"
+                        src="/public/img/pro_img/<%= pro.image_pro %>"
+                        alt=""
+                     />
+   
+                     <div class="main-func">
+                        <div class="container-func-pro">
+                           <div class="function-product">
+                              <div class="func-wishlist">
+                                 <i class="bi bi-heart"></i>
+                              </div>
+                              |
+                              <div class="func-qich-view">
+                                 <i class="bi bi-search"></i>
+                              </div>
+                              |
+                              <div class="func-add-cart">
+                                 <i class="bi bi-cart-plus btn-addCart"></i>
+                              </div>
+                              |
+                              <div class="func-payment">
+                                 <i class="bi bi-currency-dollar"></i>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+   
+                  <div class="product-content">
+                     <div class="product-name">
+                        <a href="#"><h3><%= pro.name_pro %></h3></a>
+                        <p>Furniture</p>
+                     </div>
+   
+                     <div class="product-price">
+                        <% if (pro.sale_pro < pro.price_pro) { %>
+                              <div class="sale-price">
+                                 <p>$<%= pro.sale_pro %></p>
+                                 <span>$<%= pro.price_pro %></span>
+                              </div>
+                        <% } else { %>
+                              <p>$<%= pro.price_pro %></p>
+                        <% } %>
+                        <div class="stars">
+                           <i class="bi bi-star-fill"></i>
+                           <i class="bi bi-star-fill"></i>
+                           <i class="bi bi-star-fill"></i>
+                           <i class="bi bi-star-fill"></i>
+                           <i class="bi bi-star-fill"></i>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <form action="" method="post">
+               <div class="box-input-add">
+                  <div class="element-input">
+                     <p>Product's name</p>
+                     <input type="text" name="edit_name" id="edit-name" value="<%= pro.name_pro %>" placeholder="Name">
+                  </div>
+                  <div class="element-input">
+                     <p>Product's image</p>
+                     <input name="edit_image" type="file" name="" id="edit-image">
+                     <!-- <div class="chooseFileAvatar">
+                        <input type="file" id="edit-image" class="inputFile" accept="image/*">
+                        <label for="edit-image"><i class="bi bi-upload"></i>Upload image</label>
+                        <span>
+                           <strong>File:</strong>
+                           <span id="fileName">None</span>
+                        </span>
+                     </div> -->
+                  </div>
+                  <div class="element-input">
+                     <p>Product's price</p>
+                     <input name="edit_price" type="text" id="edit-price" value="<%= pro.price_pro %>" placeholder="Price">
+                  </div>
+                  <div class="element-input">
+                     <p>Product's promotion price</p>
+                     <input name="edit_sale" type="text" id="edit-sale" value="<%= pro.sale_pro %>" placeholder="Promotion price">
+                  </div>
+                  <div class="element-input">
+                     <p>Product's discription</p>
+                     <input name="edit_description" type="text" id="edit-description" value="<%= pro.description_pro %>" placeholder="Discription">
+                  </div>
+                  <div class="element-input">
+                     <p>Product's trengding</p>
+                     <input name="edit_trending" <%= (pro.trending_pro == "1")?'checked':'' %> type="checkbox" id="edit-trending">
+                  </div>
+                  <button class="edit-product" type="submit">Apply</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</section>
+<%- include('./templates/footer_admin') %>

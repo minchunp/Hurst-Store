@@ -1,0 +1,221 @@
+{
+  "products": [
+    {
+      "name_pro": "Nusskubus nutcracker",
+      "id_cate": "1",
+      "price_pro": 50,
+      "sale_pro": 42,
+      "image_pro": "product1.webp",
+      "trending_pro": "1",
+      "description_pro": "Houseware refers to a broad category of items and products that are used in households for various purposes, contributing to the functionality, organization, and aesthetics of a home."
+    },
+    {
+      "name_pro": "Marbled stools",
+      "id_cate": "1",
+      "price_pro": 54,
+      "sale_pro": 54,
+      "image_pro": "product2.webp",
+      "trending_pro": "1",
+      "description_pro": "Houseware refers to a broad category of items and products that are used in households for various purposes, contributing to the functionality, organization, and aesthetics of a home."
+    },
+    {
+      "name_pro": "Piece of wood",
+      "id_cate": "1",
+      "price_pro": 52,
+      "sale_pro": 36,
+      "image_pro": "product3.webp",
+      "trending_pro": "1",
+      "description_pro": "Houseware refers to a broad category of items and products that are used in households for various purposes, contributing to the functionality, organization, and aesthetics of a home."
+    },
+    {
+      "name_pro": "Wood egg cups",
+      "id_cate": "1",
+      "price_pro": 56,
+      "sale_pro": 42,
+      "image_pro": "product4.webp",
+      "trending_pro": "1",
+      "description_pro": "Houseware refers to a broad category of items and products that are used in households for various purposes, contributing to the functionality, organization, and aesthetics of a home."
+    },
+    {
+      "name_pro": "Dish",
+      "id_cate": "1",
+      "price_pro": 52,
+      "sale_pro": 36,
+      "image_pro": "product5.webp",
+      "trending_pro": "0",
+      "description_pro": "Houseware refers to a broad category of items and products that are used in households for various purposes, contributing to the functionality, organization, and aesthetics of a home."
+    },
+    {
+      "name_pro": "Wooden stool",
+      "id_cate": "2",
+      "price_pro": 35,
+      "sale_pro": 30,
+      "image_pro": "product6.webp",
+      "trending_pro": "0",
+      "description_pro": "A chair is a piece of furniture designed for one person to sit on, providing support and comfort."
+    },
+    {
+      "name_pro": "Modern chair",
+      "id_cate": "2",
+      "price_pro": 53,
+      "sale_pro": 53,
+      "image_pro": "product7.webp",
+      "trending_pro": "0",
+      "description_pro": "A chair is a piece of furniture designed for one person to sit on, providing support and comfort."
+    },
+    {
+      "name_pro": "Winston trestle table",
+      "id_cate": "3",
+      "price_pro": 45,
+      "sale_pro": 45,
+      "image_pro": "product8.webp",
+      "trending_pro": "0",
+      "description_pro": "A table is a piece of furniture with a flat, horizontal surface supported by legs, a pedestal, or other structural elements."
+    },
+    {
+      "name_pro": "Wall mount - Work desk",
+      "id_cate": "1",
+      "price_pro": 62,
+      "sale_pro": 41,
+      "image_pro": "product9.webp",
+      "trending_pro": "0",
+      "description_pro": "Houseware refers to a broad category of items and products that are used in households for various purposes, contributing to the functionality, organization, and aesthetics of a home."
+    },
+    {
+      "name_pro": "Plywood chair",
+      "id_cate": "2",
+      "price_pro": 30,
+      "sale_pro": 30,
+      "image_pro": "product10.webp",
+      "trending_pro": "0",
+      "description_pro": "A chair is a piece of furniture designed for one person to sit on, providing support and comfort."
+    },
+    {
+      "name_pro": "Fonteyn dressing table",
+      "id_cate": "3",
+      "price_pro": 52,
+      "sale_pro": 52,
+      "image_pro": "product11.webp",
+      "trending_pro": "0",
+      "description_pro": "A table is a piece of furniture with a flat, horizontal surface supported by legs, a pedestal, or other structural elements."
+    },
+    {
+      "name_pro": "Cloudy chair",
+      "id_cate": "2",
+      "price_pro": 56,
+      "sale_pro": 45,
+      "image_pro": "product12.webp",
+      "trending_pro": "0",
+      "description_pro": "A chair is a piece of furniture designed for one person to sit on, providing support and comfort."
+    }
+  ],
+  "categories": [
+    {
+      "name": "Houseware"
+    },
+    {
+      "name": "Chair"
+    },
+    {
+      "name": "Table"
+    }
+  ],
+  "users": [
+    {
+      "id": "a1d5",
+      "email_user": "minhtrung@gmail.com",
+      "pass_user": "Minhtrung511",
+      "name_user": "Huynh Minh Trung",
+      "role_user": "Admin"
+    },
+    {
+      "id": "a1d5",
+      "email_user": "minhtrung123@gmail.com",
+      "pass_user": "Minhtrung511",
+      "name_user": "Huynh Minh Trung",
+      "role_user": "User"
+    }
+  ],
+  "orders": [
+    {
+      "id": "b3e5",
+      "id_user": "a1d5",
+      "products": [
+        {
+          "quantity_pro": 3,
+          "size_pro": "L",
+          "name_pro": "Dish",
+          "price_pro": 52,
+          "sale_pro": 36,
+          "image_pro": "product5.webp",
+          "trending_pro": "0",
+          "description_pro": "Houseware refers to a broad category of items and products that are used in households for various purposes, contributing to the functionality, organization, and aesthetics of a home.",
+          "id": "5",
+          "id_cate": "1"
+        },
+        {
+          "quantity_pro": 10,
+          "size_pro": "M",
+          "name_pro": "Nusskubus nutcracker",
+          "price_pro": 50,
+          "sale_pro": 42,
+          "image_pro": "product1.webp",
+          "trending_pro": "1",
+          "description_pro": "Houseware refers to a broad category of items and products that are used in households for various purposes, contributing to the functionality, organization, and aesthetics of a home.",
+          "id": "1",
+          "id_cate": "1"
+        },
+        {
+          "quantity_pro": 1,
+          "size_pro": "S",
+          "name_pro": "Winston trestle table",
+          "price_pro": 45,
+          "sale_pro": 45,
+          "image_pro": "product8.webp",
+          "trending_pro": "0",
+          "description_pro": "A table is a piece of furniture with a flat, horizontal surface supported by legs, a pedestal, or other structural elements.",
+          "id": "8",
+          "id_cate": "3"
+        }
+      ],
+      "date_order": "2024-04-06 02:59:37",
+      "total_order": 573,
+      "status_order": "order",
+      "name_user": "Huynh Minh Trung"
+    },
+    {
+      "id": "70f1",
+      "id_user": "a1d5",
+      "products": [
+        {
+          "quantity_pro": 3,
+          "size_pro": "S",
+          "name_pro": "Marbled stools",
+          "price_pro": 54,
+          "sale_pro": 54,
+          "image_pro": "product2.webp",
+          "trending_pro": "1",
+          "description_pro": "Houseware refers to a broad category of items and products that are used in households for various purposes, contributing to the functionality, organization, and aesthetics of a home.",
+          "id": "2",
+          "id_cate": "1"
+        },
+        {
+          "quantity_pro": 1,
+          "size_pro": "S",
+          "name_pro": "Nusskubus nutcracker",
+          "price_pro": 50,
+          "sale_pro": 42,
+          "image_pro": "product1.webp",
+          "trending_pro": "1",
+          "description_pro": "Houseware refers to a broad category of items and products that are used in households for various purposes, contributing to the functionality, organization, and aesthetics of a home.",
+          "id": "1",
+          "id_cate": "1"
+        }
+      ],
+      "date_order": "2024-04-06 03:16:00",
+      "total_order": 204,
+      "status_order": "order",
+      "name_user": "Huynh Minh Trung"
+    }
+  ]
+}

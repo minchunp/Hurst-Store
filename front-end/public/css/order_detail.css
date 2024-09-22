@@ -1,0 +1,202 @@
+:root {
+   --normal-color: #434343;
+   --main-color: #c8a165;
+   --accent-color: #c87065;
+   --bground-menu: #273142;
+   --bground-admin: #1b2431;
+   --title-color: #444;
+   --mrt: 55px;
+}
+
+a {
+   text-decoration: none;
+   color: var(--normal-color);
+   transition-duration: 0.3s;
+   transition-timing-function: ease-in-out;
+}
+
+body {
+   background-color: var(--bground-admin);
+   box-sizing: border-box;
+   margin: 0;
+   font-family: "Lato", sans-serif;
+}
+
+/* Css order detail */
+.main-order-detail {
+   margin-top: 80px;
+}
+
+.title-product span {
+   color: var(--main-color);
+}
+
+.main-order-detail .order-pending {
+   margin-top: 15px;
+}
+
+.main-order-detail .title-order-pending {
+   display: block;
+}
+
+.name-user-order-detail,
+.address-user-order-detail,
+.status-user-order-detail {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: start;
+   gap: 15px;
+}
+
+.infor-user-order {
+   margin-top: 15px;
+}
+
+.name-user-order-detail h3,
+.address-user-order-detail h3,
+.status-user-order-detail h3,
+.name-user-order-detail p,
+.address-user-order-detail p {
+   margin: 10px 0;
+}
+
+.name-user-order-detail h3,
+.address-user-order-detail h3,
+.status-user-order-detail h3 {
+   color: var(--main-color);
+   font-size: 15px;
+}
+
+.name-user-order-detail p,
+.address-user-order-detail p,
+.status-user-order-detail p {
+   color: #ffffff;
+   font-size: 14px;
+}
+
+.status-user-order-detail .status {
+   max-width: 100spx;
+}
+
+.status-user-order-detail .status.pending {
+   cursor: pointer;
+   background-color: #FCBE2D;
+   padding: 8px 20px;
+   border-radius: 20px;
+}
+
+.status-user-order-detail .status.in-transit {
+   cursor: pointer;
+   background-color: #BA29FF;
+   padding: 8px 20px;
+   border-radius: 20px;
+}
+
+.status-user-order-detail .status.rejected {
+   cursor: pointer;
+   background-color: #EF3826;
+   padding: 8px 20px;
+   border-radius: 20px;
+}
+
+.status-user-order-detail .status.complete {
+   cursor: pointer;
+   background-color: #00B69B;
+   padding: 8px 20px;
+   border-radius: 20px;
+}
+
+.status select {
+   outline: none;
+   border: none;
+   color: #ffffff;
+   -webkit-appearance:none;
+   appearance: none;
+   cursor: pointer;
+   padding: 5px 8px;
+}
+
+.status select.order {
+   background-color: #FCBE2D;
+}
+
+.status select.shipping {
+   background-color: #BA29FF;
+}
+
+.status select.cancel {
+   background-color: #EF3826;
+}
+
+.status select.success {
+   background-color: #00B69B;
+}
+
+.status select option {
+   cursor: pointer;
+   text-align: center;
+}
+
+.status select option p {
+   padding: 0;
+   margin: 0;
+}
+
+.status-user-order-detail button {
+   cursor: pointer;
+   outline: none;
+   border: none;
+   height: 35px;
+   width: 35px;
+   border-radius: 50%;
+   background-color: #323D4E;
+   transition: all .3s ease-in-out;
+}
+
+.status-user-order-detail button:hover {
+   background-color: var(--main-color);
+}
+
+.status-user-order-detail button i {
+   color: #ffffff;
+}
+
+.main-order-detail .title-list-order-pending,
+.main-order-detail .main-order-pending {
+   grid-template-columns: 1.5fr 1.5fr 1fr 1.5fr 1.5fr;
+}
+
+.main-order-detail .title-list-order-pending p:nth-child(2),
+.main-order-detail .title-list-order-pending p:nth-child(3),
+.main-order-detail .main-order-pending p:nth-child(2),
+.main-order-detail .main-order-pending p:nth-child(3) {
+   justify-self: center;
+}
+
+.main-order-detail .main-order-pending .product-order-detail {
+   justify-self: start;
+}
+
+.product-order-detail {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: start;
+   gap: 10px;
+}
+
+.product-order-detail img {
+   width: 55px;
+   height: 55px;
+   border-radius: 50%;
+}
+
+.main-order-detail p.order-detail-total-money {
+   color: var(--accent-color);
+   font-weight: 600;
+}
+
+.main-order-detail .main-order-pending {
+   padding: 13px;
+}

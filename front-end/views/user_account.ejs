@@ -1,0 +1,93 @@
+<%- include('./templates/header2') %>
+<!-- Header Backgournd Shopping Cart -->
+<section>
+   <div class="background-shopping-cart overlay-bg">
+      <div class="body-boxcenter">
+         <div class="title-bg">
+            <h1>LOG IN & REGISTER</h1>
+         </div>
+
+         <div class="mini-title-bg">
+            <ul>
+               <li>
+                  <a href="/">HOME</a>
+               </li>
+               <li>
+                  <a href="/account">LOGIN & REGISTER</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</section>
+</header>
+<!-- Body Login & Register -->
+<div id="toast"></div>
+<input type="hidden" id="titleToast" value="<%= titleToast %>">
+<input type="hidden" id="messageToast" value="<%= messageToast %>">
+<input type="hidden" id="typeToast" value="<%= typeToast %>">
+<input type="hidden" id="durationToast" value="<%= durationToast %>">
+
+<main id="main_account">
+   <div class="container-login-register" id="container">
+      <div class="form-container sign-up">
+         <form method="post" id="form">
+            <h1>Create Account</h1>
+            <div class="social-icons">
+               <a href="#" class="icon"><i class="bi bi-google"></i></a>
+               <a href="#" class="icon"><i class="bi bi-facebook"></i></a>
+               <a href="#" class="icon"><i class="bi bi-github"></i></a>
+               <a href="#" class="icon"><i class="bi bi-linkedin"></i></a>
+            </div>
+            <span class="content-form">or use your email for registeration</span>
+            <input type="text" id="name-register" name="name_register" placeholder="Full name">
+            <input type="email" id="email-register" name="email_register" placeholder="Email">
+            <input type="password" id="password-register" name="password_register" placeholder="Password">
+            <input type="password" id="password-confirm" name="password_confirm" placeholder="Re-enter password">
+            <!-- <div class="chooseFileAvatar">
+               <input type="file" id="avatar" class="inputFile" accept="image/*">
+               <label for="avatar"><i class="bi bi-upload"></i>Upload avatar</label>
+               <span>
+                  <strong>File:</strong>
+                  <span id="fileName">None</span>
+               </span>
+            </div> -->
+            <button type="submit">Sign Up</button>
+         </form>
+      </div>
+      
+      <div class="form-container sign-in">
+         <form method="post" id="form">
+            <h1>Sign In</h1>
+            <div class="social-icons">
+               <a href="#" class="icon"><i class="bi bi-google"></i></a>
+               <a href="#" class="icon"><i class="bi bi-facebook"></i></a>
+               <a href="#" class="icon"><i class="bi bi-github"></i></a>
+               <a href="#" class="icon"><i class="bi bi-linkedin"></i></a>
+            </div>
+            <span class="content-form">or use your email password</span>
+            <input type="email" id="email-login" name="email_login" placeholder="Email">
+            <input type="password" id="password-login" name="password_login" placeholder="Password">
+            <a href="#">Forget Your Password?</a>
+            <button type="submit">Sign In</button>
+         </form>
+      </div>
+
+      <div class="toggle-container">
+         <div class="toggle">
+            <div class="toggle-panel toggle-left">
+               <h1>Welcome Back</h1>
+               <p>Enter your personal details to use all of site features</p>
+               <button class="hidden" id="login">Sign In</button>
+            </div>
+
+            <div class="toggle-panel toggle-right">
+               <h1>Hello, Friend!</h1>
+               <p>Register with your personal details to use all of site features</p>
+               <button class="hidden" id="register">Sign Up</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+<%- include('./templates/footer2') %>

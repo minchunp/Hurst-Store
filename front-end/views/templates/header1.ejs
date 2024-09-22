@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title><%= title %> | Hurst</title>
+
+      <!-- Link Boostrap Icon -->
+      <link
+         rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      />
+
+      <!-- Link Google Font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+         rel="stylesheet"
+      />
+
+      <!-- Link Css -->
+      <link
+         rel="shortcut icon"
+         href="/public/img/other_img/favicon.ico"
+         type="image/x-icon"
+      />
+      <link rel="stylesheet" href="/public/css/header.css" />
+      <link rel="stylesheet" href="/public/css/main.css" />
+      <link rel="stylesheet" href="/public/css/footer.css" />
+      <link rel="stylesheet" href="/public/css/account.css">
+      <link rel="stylesheet" href="/public/css/cart.css">
+      <link rel="stylesheet" href="/public/css/detail.css">
+   </head>
+
+   <body id="header-1">
+      <!-- Header (Menu + Banner) -->
+      <header>
+         <!-- Header Menu -->
+         <section>
+            <div class="main-header">
+               <div class="boxcenter">
+                  <div class="container-main-header">
+                     <!-- Slibar Menu -->
+                     <div class="icon-menu-hidden">
+                        <i class="bi bi-list"></i>
+                     </div>
+
+                     <!-- Main logo website -->
+                     <div class="main-logo">
+                        <a href="/">
+                           <img src="/public/img/other_img/logo.webp" alt="" />
+                        </a>
+                     </div>
+
+                     <!-- Mini cart -->
+                     <div class="main-cart">
+                        <i class="bi bi-cart-fill"></i>
+                        <div id="count-cart" class="count-cart"><%= cart.products.length %></div>
+
+                        <!-- Mini cart detail -->
+                        <div class="mini-cart-detail">
+                           <div class="notification-qty">
+                              <p>
+                                 You have <span id="count-miniCart"><%= cart.products.length %></span> in
+                                 your shopping bag
+                              </p>
+                           </div>
+                           
+                           <div class="container-product-mini-cart">
+                              <% let i = 0; let orderTotal = 0; cart.products.forEach(pro => { %>
+                                    <div class="product-mini-cart">
+                                       <a href="/detail/<%= pro.id %>">
+                                          <img src="/public/img/pro_img/<%= pro.image_pro %>" alt="">
+                                       </a>
+                           
+                                       <div class="content-product-mini-cart">
+                                          <a href="/detail/<%= pro.id %>"><h3><%= pro.name_pro %></h3></a>
+                                          <p>Price: $<%= pro.price_pro %></p>
+                                          <% if (pro.sale_pro < pro.price_pro) { %>
+                                                <p class="sale">Sale: $<%= pro.sale_pro %></p>
+                                          <% } else { %>
+                                                <p class="sale">Sale: Don't aplly</p>
+                                          <% } %>
+                                          <p>Quantity: <%= pro.quantity_pro %></p>
+                                       </div>
+                           
+                                       <div class="remove-mini-cart">
+                                          <a href="/cart/<%= i %>/delete"><i class="bi bi-x btn-removeCart"></i></a>
+                                       </div>
+                                    </div>
+                              <% i++; orderTotal += ((pro.sale_pro < pro.price_pro)?pro.sale_pro:pro.price_pro) * pro.quantity_pro }); %>
+                           </div>
+
+                           <div class="total-mini-cart">
+                              <p>Total</p>
+                              <p id="total-miniCart">$<%= orderTotal %></p>
+                           </div>
+
+                           <div class="double-button-mini-cart">
+                              <a href="/cart"><button>VIEW CART</button></a>
+                              <a href="/cart/checkout"><button>PLACE ORDER</button></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Slidebar menu header -->
+               <div class="side-bar">
+                  <div class="close-menu">
+                     <i class="bi bi-x-lg"></i>
+                  </div>
+
+                  <div class="main-menu">
+                     <div class="item">
+                        <a class="item-hover" href="/">HOME</a>
+                     </div>
+                     <div class="item">
+                        <a class="item-hover" href="/login">ACCOUNT</a>
+                     </div>
+                     <div class="item">
+                        <a class="item-hover" href="#">PRODUCTS</a>
+                     </div>
+                     <div class="item">
+                        <div class="item-hover sub-btn" href="#">
+                           CATEGORIES<i class="bi bi-chevron-right dropdown"></i>
+                        </div>
+                        <div class="sub-menu" id="category_slidebarMenu">
+                           <a href="#" class="sub-item">Sub item 1</a>
+                           <a href="#" class="sub-item">Sub item 2</a>
+                           <a href="#" class="sub-item">Sub item 3</a>
+                        </div>
+                     </div>
+                     <div class="item">
+                        <a class="item-hover" href="#">BLOGS</a>
+                     </div>
+                     <div class="item">
+                        <a class="item-hover" href="#">PAGES</a>
+                     </div>
+                     <div class="item">
+                        <a class="item-hover" href="#">ABOUT US</a>
+                     </div>
+                     <div class="item">
+                        <a class="item-hover" href="#">CONTACT</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>

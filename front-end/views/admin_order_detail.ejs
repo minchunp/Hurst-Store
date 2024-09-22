@@ -1,0 +1,141 @@
+<%- include('./templates/header_admin') %>
+<section>
+   <div class="main-order-detail">
+      <div class="boxcenter">
+         <div class="title-product">
+            <% let idOder = ''; idOder = (order._id).slice(20) %>
+            <h1>Order detail <span>#<%= idOder %></span></h1>
+            <a href="/admin/order">
+               <i class="bi bi-arrow-left-short"></i>
+            </a>
+         </div>
+
+         <div class="order-pending">
+            <div class="title-order-pending">
+               <h1>Product Lists</h1>
+               <div class="infor-user-order">
+                  <div class="name-user-order-detail">
+                     <h3>Customer name:</h3>
+                     <p><%= order.name_user %></p>
+                  </div>
+
+                  <div class="address-user-order-detail">
+                     <h3>Customer address:</h3>
+                     <p>TCH, Ho Chi Minh city</p>
+                  </div>
+
+                  <div class="address-user-order-detail">
+                     <h3>Date-time order:</h3>
+                     <p><%= order.date_order %></p>
+                  </div>
+
+                  <form method="post">
+                     <div class="status-user-order-detail">
+                        <h3>Status:</h3>
+                        <% if (order.status_order == 'order') { %>
+                              <div class="status pending">
+                                 <select name="status" class="<%= order.status_order %>">
+                                    <option selected value="order">
+                                       <p>Pending</p>
+                                    </option>
+                                    <option value="shipping">
+                                       <p>In transit</p>
+                                    </option>
+                                    <option value="success">
+                                       <p>Complete</p>
+                                    </option>
+                                    <option value="cancel">
+                                       <p>Rejected</p>
+                                    </option>
+                                 </select>
+                              </div>
+                        <% } else if (order.status_order == 'shipping') { %>
+                              <div class="status in-transit">
+                                 <select name="status" class="shipping">
+                                    <option selected value="shipping">
+                                       <p>In transit</p>
+                                    </option>
+                                    <option value="order">
+                                       <p>Pending</p>
+                                    </option>
+                                    <option value="success">
+                                       <p>Complete</p>
+                                    </option>
+                                    <option value="cancel">
+                                       <p>Rejected</p>
+                                    </option>
+                                 </select>
+                              </div>
+                        <% } else if (order.status_order == 'success') { %>
+                              <div class="status complete">
+                                 <select name="status" class="success">
+                                    <option selected value="success">
+                                       <p>Complete</p>
+                                    </option>
+                                    <option value="shipping">
+                                       <p>In transit</p>
+                                    </option>
+                                    <option value="order">
+                                       <p>Pending</p>
+                                    </option>
+                                    <option value="cancel">
+                                       <p>Rejected</p>
+                                    </option>
+                                 </select>
+                              </div>
+                        <% } else if (order.status_order == 'cancel') { %>
+                              <div class="status rejected">
+                                 <select name="status" class="cancel">
+                                    <option selected value="cancel">
+                                       <p>Rejected</p>
+                                    </option>
+                                    <option value="shipping">
+                                       <p>In transit</p>
+                                    </option>
+                                    <option value="success">
+                                       <p>Complete</p>
+                                    </option>
+                                    <option value="order">
+                                       <p>Pending</p>
+                                    </option>
+                                 </select>
+                              </div>
+                        <% } %>
+   
+                        <button type="submit">
+                           <i class="bi bi-check2"></i>
+                        </button> 
+                     </div>
+                  </form>
+               </div>
+            </div>
+
+            <div class="list-order-pending">
+               <div class="title-list-order-pending">
+                  <p>Product Name</p>
+                  <p>Price</p>
+                  <p>Size</p>
+                  <p>Quantity</p>
+                  <p>Total money</p>
+               </div>
+
+               <div class="main-list">
+                  <% order.products.forEach(pro => { %>
+                        <div class="main-order-pending">
+                           <div class="product-order-detail">
+                              <img src="/public/img/pro_img/<%= pro.image_pro %>" alt="">
+                              <p><%= pro.name_pro %></p>
+                           </div>
+                           <p class="pending-total-money">$<%= (pro.sale_pro<pro.price_pro)?pro.sale_pro:pro.price_pro %></p>
+                           <p><%= pro.size_pro %></p>
+                           <p><%= pro.quantity_pro %></p>
+                           <p class="order-detail-total-money">$<%= ((pro.sale_pro<pro.price_pro)?pro.sale_pro:pro.price_pro) * pro.quantity_pro %></p>
+                        </div>
+                  <% }); %>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<%- include('./templates/footer_admin') %>

@@ -1,0 +1,196 @@
+<%- include('./templates/header2') %>
+<!-- Header Backgournd Shopping Cart -->
+<section>
+   <div class="background-shopping-cart overlay-bg">
+      <div class="body-boxcenter">
+         <div class="title-bg">
+            <h1>SINGLE PRODUCT</h1>
+         </div>
+
+         <div class="mini-title-bg">
+            <ul>
+               <li>
+                  <a href="/">HOME</a>
+               </li>
+               <li>
+                  <a href="#">SINGLE PRODUCT</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</section>
+</header>
+
+<div id="toast"></div>
+<input type="hidden" id="titleToast" value="<%= titleToast %>">
+<input type="hidden" id="messageToast" value="<%= messageToast %>">
+<input type="hidden" id="typeToast" value="<%= typeToast %>">
+<input type="hidden" id="durationToast" value="<%= durationToast %>">
+<!-- Body single product -->
+<main>
+<div class="body-boxcenter">
+   <div class="container-main-detail">
+      <div class="container-single-product">
+         <!-- Box main single product -->
+         <div class="main-product-detail" id="main-product-detail">
+            <!-- Image -->
+            <div class="main-image">
+               <img src="/public/img/pro_img/<%= pro.image_pro %>" alt="" />
+            </div>
+         
+            <!-- Content -->
+            <div class="main-content">
+               <div class="name-single-product">
+                  <h2><%= pro.name_pro %></h2>
+                  <div class="stars">
+                     <i class="bi bi-star-fill"></i>
+                     <i class="bi bi-star-fill"></i>
+                     <i class="bi bi-star-fill"></i>
+                     <i class="bi bi-star-fill"></i>
+                     <i class="bi bi-star-fill"></i>
+                  </div>
+               </div>
+         
+               <div class="price-single-product">
+                  <% if (pro.sale_pro < pro.price_pro) { %>
+                        <p>$<%= pro.sale_pro %></p>
+                        <span>$<%= pro.price_pro %></span>
+                  <% } else { %>
+                        <p>$<%= pro.price_pro %></p>
+                  <% } %>
+               </div>
+         
+               <div class="text-single-product">
+                  <p>
+                     <%= pro.description_pro %>
+                  </p>
+               </div>
+         
+               <form action="" method="post">
+                  <div class="size-single-product">
+                     <p>Size:</p>
+                     <div class="element-size">
+                        <input type="radio" id="size_1" name="size_product" value="S">
+                        <label for="size_1">S</label>
+                        <input type="radio" id="size_2" name="size_product" value="M">
+                        <label for="size_2">M</label>
+                        <input type="radio" id="size_3" name="size_product" value="L">
+                        <label for="size_3">L</label>
+                     </div>
+                  </div>
+            
+                  <div class="quantity-single-product">
+                     <p>Quantity:</p>
+                     <div id="quantity-single-product" class="quantity-pro">
+                        <div onclick="handleDec()" class="dec-qtybutton"><i class="bi bi-dash"></i></div>
+                        <input type="text" id="amount" name="quantity_product" value="1" />
+                        <div onclick="handleInc()" class="inc-qtybutton"><i class="bi bi-plus"></i></div>
+                     </div>
+                  </div>
+            
+                  <div class="button-single-product">
+                     <button type="submit">Add to cart</button>
+                     <button>Place orther</button>
+                  </div>
+               </form>
+            </div> 
+         </div>
+
+         <!-- Information function product detail -->
+         <div class="information-func-single-product">
+            <!-- Function -->
+            <div class="func-single-product">
+               <a href="#" class="title-func active"> Description </a>
+               <a href="#" class="title-func"> Information </a>
+               <a href="#" class="title-func"> Reviews </a>
+               <a href="#" class="title-func"> Tags </a>
+            </div>
+
+            <!-- Information -->
+            <div class="information-single-product">
+               <div class="description-single-product">
+                  <div class="title-info">
+                     <h3>Description</h3>
+                  </div>
+
+                  <div class="content-decription">
+                     <p>
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Integer accumsan egestas elese
+                        ifend. Phasellus a felis at est bibendum
+                        feugiat ut eget eni Praesent et messages in con
+                        sectetur posuere dolor non.
+                     </p>
+                     <p>
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Integer accumsan egestas elese
+                        ifend. Phasellus a felis at est bibendum
+                        feugiat ut eget eni Praesent et messages in con
+                        sectetur posuere dolor non.
+                     </p>
+                     <p>
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Integer accumsan egestas elese
+                        ifend. Phasellus a felis at est bibendum
+                        feugiat ut eget eni Praesent et messages in con
+                        sectetur posuere dolor non.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="other-section">
+         <div class="container-other-section">
+            <!-- Search -->
+            <div class="search-single-product">
+               <input type="text" placeholder="Search hear..." />
+               <i class="bi bi-search"></i>
+            </div>
+
+            <!-- Categories -->
+            <div class="categories-single-product">
+               <div class="title-category-single-product">
+                  <h2>CATEGORIES</h2>
+               </div>
+               <div class="element-catogories-single-product">
+                  <ul id="element-catogories-single-product">
+                     <li><a href="#">Houseware</a></li>
+                     <li><a href="#">Table</a></li>
+                     <li><a href="#">Chair</a></li>
+                     <li><a href="#">Lamp</a></li>
+                  </ul>
+               </div>
+            </div>
+
+            <!-- Recent product -->
+            <div class="recent-product-single-product">
+               <div class="title-category-single-product">
+                  <h2>RECENT PRODUCTS</h2>
+               </div>
+               <div class="element-recent-products">
+                  <% listProByPrice.forEach(pro => { %>
+                        <!-- RProduct -->
+                        <a href="/detail/<%= pro._id %>">
+                           <div class="recent-product">
+                              <img
+                                 src="/public/img/pro_img/<%= pro.image_pro %>"
+                                 alt=""
+                              />
+                              <div class="content-recent-product">
+                                 <h3><%= pro.name_pro %></h3>
+                                 <p>$<%= pro.price_pro %></p>
+                              </div>
+                           </div>
+                        </a>
+                  <% }); %>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</main>
+<%- include('./templates/footer2') %>

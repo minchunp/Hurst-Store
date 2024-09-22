@@ -1,0 +1,59 @@
+<%- include('./templates/header_admin') %>
+<!-- Section dashboard -->
+<section>
+   <div class="main-dashboard">
+      <div class="boxcenter">
+         <div class="title-product">
+            <h1>Add User</h1> 
+            <a href="/admin/user">
+               <i class="bi bi-arrow-left-short"></i>
+            </a>
+         </div>
+
+         <div class="banner-product">
+            <img src="/public/img/other_img/wallpaper-angledwares.jpg" alt="">
+            <div class="text-banner">
+               <p>WELCOME TO OUR</p>
+               <h1>FURNITURE</h1>
+               <p>GALLERY 2024</p>
+            </div>
+         </div>
+
+         <div class="order-pending">
+            <div class="title-order-pending">
+               <h1>User ID #Random</h1>
+            </div>
+
+            <div id="list-user" class="list-order-pending">
+               <div class="title-list-order-pending">
+                  <p>ID</p>
+                  <p>User Name</p>
+                  <p>Email User</p>
+                  <p>Role</p>
+                  <p>Function</p>
+               </div>
+
+               <form method="post">
+                  <div class="main-list">
+                     <div class="main-order-pending">
+                        <a href="#">
+                           <p>Random</p>
+                        </a>
+                        <input class="name_user" type="text" name="name_user" placeholder="User name">
+                        <input class="email_user" type="text" name="email_user" placeholder="Email user">
+                        <select name="role_user">
+                           <option value="User">User</option>
+                           <option value="Admin">Admin</option>
+                        </select>
+                        <button type="submit">
+                           <i class="bi bi-check2"></i>
+                        </button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<%- include('./templates/footer_admin') %>

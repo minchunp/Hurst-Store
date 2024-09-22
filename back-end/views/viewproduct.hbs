@@ -1,0 +1,9 @@
+<p>Danh sach san pham</p>
+<p>{{name}} - {{giaban}} - {{nsx}}</p>
+<p>{{sp.ten}} - {{sp.gia}}</p>
+<a href="/sanpham/add">Thêm</a>
+<ol>
+    {{#each ds}}
+        <li>{{ten}} - {{gia}}<a href="/sanpham/edit2/{{id}}">Sửa</a><a href="/sanpham/del/{{id}}">Xóa</a></li>
+    {{/each}}
+</ol>       

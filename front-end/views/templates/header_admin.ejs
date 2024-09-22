@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Admin - <%= title %> || Hurst</title>
+
+      <!-- Link Boostrap Icon -->
+      <link
+         rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      />
+
+      <!-- Link Google Font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+         rel="stylesheet"
+      />
+
+      <!-- Link Css -->
+      <link
+         rel="shortcut icon"
+         href="/public/img/other_img/favicon.ico"
+         type="image/x-icon"
+      />
+      <link rel="stylesheet" href="/public/css/order_detail.css">
+      <link rel="stylesheet" href="/public/css/dashboard.css">
+      <link rel="stylesheet" href="/public/css/style_admin.css" />
+      <link rel="stylesheet" href="/public/css/add_product.css">
+      <link rel="stylesheet" href="/public/css/edit_product.css">
+   </head>
+   <body>
+      <div class="main-container">
+         <!-- Main menu  -->
+         <div class="menu-right">
+            <!-- Logo website admin -->
+            <div class="logo-website">
+               <a href="/"><img src="/public/img/other_img/logo.webp" alt=""></a>
+            </div>
+
+            <!-- Menu website admin -->
+            <div class="container-items-menu">
+               <a href="/admin"><div class="items <%= (title=='Dashboard')?'active':'' %>">Dashboard</div></a>
+               <a href="/admin/product"><div class="items <%= (title=='Products' || title=='Add Product' || title=='Edit Product')?'active':'' %>">Products</div></a>
+               <a href="/admin/user"><div class="items <%= (title=='Users' || title=='Edit User' || title=='Add User')?'active':'' %>">Users</div></a>
+               <a href="/admin/order"><div class="items <%= (title=='Order detail' || title=='Orders')?'active':'' %>">Order Lists</div></a>
+               <div class="items">Product Stock</div>
+            </div>
+
+            <!-- Menu website admin -->
+            <div class="container-items-menu">
+               <h1>PAGES</h1>
+               <div class="items">Contact</div>
+               <div class="items">Invoice</div>
+               <div class="items">Team</div>
+            </div>
+
+            <!-- Menu website admin -->
+            <div class="container-items-menu">
+               <div class="items">Setting</div>
+               <div class="items">Log out</div>
+            </div>
+         </div>
+         <!-- Main content -->
+         <div class="main">
+            <!-- Header website Hurst -->
+            <header>
+               <div class="boxcenter">
+                  <div class="container-header">
+                     <div class="input-search">
+                        <input type="text" placeholder="Search">
+                        <i class="bi bi-search"></i>
+                     </div>
+      
+                     <div class="account">
+                        <div class="notification">
+                           <i class="bi bi-bell-fill"></i>
+                           <div class="count-notification">1</div>
+                        </div>
+
+                        <div class="language">
+                           <img src="/public/img/other_img/English.png" alt="">
+                           <div class="content-language">
+                              <p>English</p>
+                              <i class="bi bi-chevron-compact-down"></i>
+                           </div>
+                        </div>
+   
+                        <div class="information-user">
+                           <div class="image-user">
+                              <a href="/"><img src="/public/img/other_img/admin.jpg" alt=""></a>
+                           </div>
+                           <div class="name-user">
+                              <p>Minh Trung</p>
+                              <p class="position">Admin</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </header>
+
+            <!-- Content admin -->
+            <main>

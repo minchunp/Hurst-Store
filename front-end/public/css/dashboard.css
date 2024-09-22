@@ -1,0 +1,309 @@
+:root {
+   --normal-color: #434343;
+   --main-color: #c8a165;
+   --accent-color: #c87065;
+   --bground-menu: #273142;
+   --bground-admin: #1b2431;
+   --title-color: #444;
+   --mrt: 55px;
+}
+
+a {
+   text-decoration: none;
+   color: var(--normal-color);
+   transition-duration: 0.3s;
+   transition-timing-function: ease-in-out;
+}
+
+body {
+   background-color: var(--bground-admin);
+   box-sizing: border-box;
+   margin: 0;
+   font-family: "Lato", sans-serif;
+}
+
+/* Css dashboard */
+.main-dashboard {
+   margin-top: 80px;
+}
+
+.container-box-infor-dashboard,
+.top-infor-dashboard {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: start;
+}
+
+.content-infor-dashboard {
+   display: flex;
+   flex-direction: row;
+   justify-content: start;
+   align-items: center;
+   gap: 8px;
+}
+
+.infor-dashboard {
+   background-color: var(--bground-menu);
+   border: 1px solid #313D4F;
+   padding: 20px 15px;
+   width: 250px;
+   border-radius: 15px;
+}
+
+.title-infor-dasboard p {
+   margin-top: 0;
+   color: #ffffffa0;
+   font-size: 12px;
+}
+
+.title-infor-dasboard h3 {
+   color: #ffffff;
+   font-size: 33px;
+   margin-top: 8px;
+}
+
+.icon-infor-dashboard_1,
+.icon-infor-dashboard_2,
+.icon-infor-dashboard_3,
+.icon-infor-dashboard_4 {
+   padding: 10px;
+   border-radius: 25px;
+   width: 47px;
+   height: 47px;
+   display: grid;
+   place-items: center;
+   font-size: 30px;
+}
+
+.icon-infor-dashboard_1 {
+   background-color: #8280FF;
+}
+
+.icon-infor-dashboard_2 {
+   background-color: #FEC53D;
+}
+
+.icon-infor-dashboard_3 {
+   background-color: #4AD991;
+}
+
+.icon-infor-dashboard_4 {
+   background-color: #FF9066;
+}
+
+.content-infor-dashboard i.up,
+.content-infor-dashboard p span.up {
+   color: #00B69B;
+}
+
+.content-infor-dashboard i.down,
+.content-infor-dashboard p span.down {
+   color: #F93C65;
+}
+
+.content-infor-dashboard p {
+   margin: 0;
+   color: #ffffff;
+   font-size: 13px;
+}
+
+/* Css order pending */
+.order-pending {
+   background-color: var(--bground-menu);
+   margin-top: 30px;
+   border-radius: 15px;
+   padding: 25px 25px 0px 25px;
+}
+
+.title-order-pending {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.title-order-pending h1 {
+   margin: 0;
+   color: #ffffff;
+   font-size: 20px;
+}
+
+.filter-oder-pending select {
+   border-radius: 5px;
+   border: 1px solid #313D4F;
+   background-color: #323D4E;
+   color: #ffffff;
+   padding: 5px 10px;
+}
+
+.list-order-pending {
+   margin-top: 20px;
+}
+
+.title-list-order-pending {
+   padding: 0 25px;
+   background-color: #323D4E;
+   border-radius: 5px;
+   display: grid;
+   grid-template-columns: 1fr 2fr 2fr 1.5fr 2fr 1.5fr;
+   align-items: center;
+   column-gap: 10px;
+   justify-items: center;
+}
+
+#list-user .title-list-order-pending,
+#list-user .main-order-pending {
+   grid-template-columns: .8fr 2fr 2fr 1fr 1.5fr;
+}
+
+.title-list-order-pending p {
+   color: #ffffff;
+   font-size: 14px;
+   font-weight: 600;
+}
+
+.title-list-order-pending p:nth-child(1),
+.title-list-order-pending p:nth-child(2),
+.title-list-order-pending p:nth-child(3) {
+   justify-self: start;
+}
+
+.main-order-pending {
+   border-bottom: 1px solid #323D4E;
+   padding: 25px;
+   display: grid;
+   grid-template-columns: 1fr 2fr 2fr 1.5fr 2fr 1.5fr;
+   align-items: center;
+   column-gap: 10px;
+   justify-items: center;
+}
+
+.main-order-pending:last-child {
+   border-bottom: none;
+}
+
+.main-order-pending a.statusA {
+   justify-self: center;
+}
+
+.main-order-pending a.statusA p,
+.main-order-pending p {
+   margin: 0;
+   color: #ffffffcd;
+   font-size: 14px;
+}
+
+.main-order-pending a,
+.main-order-pending p:nth-child(2),
+.main-order-pending p:nth-child(3) {
+   justify-self: start;
+}
+
+.main-order-pending a p {
+   transition: all .3s ease-in-out;
+}
+
+.main-order-pending a p:hover {
+   color: var(--main-color);
+}
+
+.main-order-pending .status.pending {
+   cursor: pointer;
+   background-color: #FCBE2D;
+   padding: 5px 20px;
+   border-radius: 15px;
+}
+
+.main-order-pending .status.in-transit {
+   cursor: pointer;
+   background-color: #BA29FF;
+   padding: 5px 20px;
+   border-radius: 15px;
+}
+
+.main-order-pending .status.complete {
+   cursor: pointer;
+   background-color: #00B69B;
+   padding: 5px 20px;
+   border-radius: 15px;
+}
+
+.main-order-pending .status.rejected {
+   cursor: pointer;
+   background-color: #EF3826;
+   padding: 5px 20px;
+   border-radius: 15px;
+}
+
+.main-order-pending .status.pending p {
+   color: #ffffff;
+}
+
+.main-order-pending p.pending-total-money {
+   color: var(--main-color);
+   font-weight: 600;
+}
+
+#list-user .main-order-pending .container-func {
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+}
+
+.container-func a {
+   padding: 10px;
+   background-color: #323D4E;
+   border-radius: 5px;
+   color: white;
+}
+
+.container-func a:hover {
+   transform: translateY(-5px);
+   color: var(--main-color);
+}
+
+#list-user .main-order-pending button {
+   cursor: pointer;
+   outline: none;
+   border: none;
+   background-color: #313D4F;
+   border-radius: 5px;
+   color: white;
+   padding: 12px 10px 8px 10px;
+   transition: all .3s ease-in-out;
+}
+
+#list-user .main-order-pending button:hover {
+   transform: translateY(-5px);
+   color: var(--main-color);
+}
+
+#list-user .main-order-pending input[type=text],
+#list-user .main-order-pending select {
+   justify-self: start;
+   outline: none;
+   color: #ffffff;
+   border: 0.6px solid #cfcfcf33;
+   background-color: #323d4e;
+   border-radius: 19px;
+   height: 35px;
+   box-sizing: border-box;
+   padding-left: 15px;
+   font-size: 12px;
+   width: 200px;
+}
+
+#list-user .main-order-pending select,
+#list-user .main-order-pending input[type=text].role_user {
+   justify-self: center;
+   text-align: center;
+   padding: 0;
+   width: 100px;
+   -webkit-appearance:none;
+   appearance: none;
+}
+
+
+
+
+
